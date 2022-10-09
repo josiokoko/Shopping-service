@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  merchant:
+    image: josiokoko/merchant:latest
+    container_name: merchant
+    restart: unless-stopped
+    user: root
+    ports:
+      - 8081:8081
+    networks:
+      - cicdnetwork
+  shopping:
+    image: josiokoko/shopping:latest
+    container_name: shopping
+    restart: unless-stopped
+    user: root
+    ports:
+      - 8082:8082
+    networks:
+      - cicdnetwork
+
+networks:
+  cicdnetwork:
