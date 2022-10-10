@@ -4,7 +4,7 @@ services:
   merchant:
     image: josiokoko/merchant:latest
     container_name: merchant
-    restart: unless-stopped
+    restart: always
     user: root
     ports:
       - 8081:8081
@@ -13,7 +13,7 @@ services:
   shopping:
     image: josiokoko/shopping:latest
     container_name: shopping
-    restart: unless-stopped
+    restart: always
     user: root
     ports:
       - 8082:8082
